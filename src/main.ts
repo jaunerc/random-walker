@@ -8,6 +8,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
     <div id="canvas"></div>
     <select id="walker-selection">
         <option>Random</option>
+        <option>In-Mouse Direction</option>
     </select>
 `
 
