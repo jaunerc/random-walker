@@ -8,12 +8,14 @@ import {GaussianWalker} from "./GaussianWalker.ts";
 
 export const Sketch = (p: p5) => {
     let walkerSelection: HTMLSelectElement
-    const walkers: Walker[] = []
+    let clearButton: HTMLButtonElement
+    let walkers: Walker[] = []
 
     p.setup = () => {
         p.createCanvas(600, 600)
         p.background(220)
-        querySelectElementFromDom()
+        queryElementsFromDom()
+        registerOnClearButtonClickEventHandler()
     }
 
     p.draw = () => {
@@ -28,8 +30,16 @@ export const Sketch = (p: p5) => {
             createWalkerOnSelection(mapSelectionToWalkerSelection(walkerSelection.value), p))
     }
 
-    function querySelectElementFromDom(): void {
+    function queryElementsFromDom(): void {
         walkerSelection = document.querySelector<HTMLSelectElement>('#walker-selection')!
+        clearButton = document.querySelector<HTMLButtonElement>('#clear-button')!
+    }
+
+    function registerOnClearButtonClickEventHandler(): void {
+        clearButton.onclick = () => {
+            walkers = []
+            p.background(220)
+        }
     }
 
     function mapSelectionToWalkerSelection(value: string): WalkerSelection {
