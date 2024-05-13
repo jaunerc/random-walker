@@ -5,12 +5,15 @@ import {Sketch} from "./sketch/Sketch.ts";
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
     <h1>Random Walker</h1>
     <p>This is an app that shows different types of random walkers implemented with p5 and inspired by the book <a href="https://natureofcode.com/">Nature of Code</a>.</p>
-    <select id="walker-selection">
-        <option>Random</option>
-        <option>In-Mouse Direction</option>
-        <option>Gaussian</option>
-    </select>
-    <button id="clear-button">Clear</button>
+    <p>Select a walker type and click on the canvas to create a random walker.</p>
+    <div class="control-elements">
+        <select id="walker-selection">
+            <option>Random</option>
+            <option>In-Mouse Direction</option>
+            <option>Gaussian</option>
+        </select>
+        <button id="clear-button">Clear</button>
+    </div>
     <div id="canvas"></div>
 `
 
