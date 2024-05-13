@@ -1,1 +1,1 @@
-export type WalkerSelection = 'random' | 'in-mouse-direction'
+export type WalkerSelection = 'random' | 'in-mouse-direction' | 'gaussian'

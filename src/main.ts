@@ -9,6 +9,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
     <select id="walker-selection">
         <option>Random</option>
         <option>In-Mouse Direction</option>
+        <option>Gaussian</option>
     </select>
 `
 

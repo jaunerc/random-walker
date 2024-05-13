@@ -4,6 +4,7 @@ import {RandomWalker} from "./RandomWalker.ts";
 import {WalkerColors} from "./WalkerColor.ts";
 import {WalkerSelection} from "./WalkerSelection.ts";
 import {InMouseDirectionWalker} from "./InMouseDirectionWalker.ts";
+import {GaussianWalker} from "./GaussianWalker.ts";
 
 export const Sketch = (p: p5) => {
     let walkerSelection: HTMLSelectElement
@@ -37,6 +38,8 @@ export const Sketch = (p: p5) => {
                 return 'random'
             case 'In-Mouse Direction':
                 return 'in-mouse-direction'
+            case 'Gaussian':
+                return 'gaussian'
             default:
                 throw `could not map the selection ${value} to a WalkerSelection type`
         }
@@ -49,6 +52,8 @@ export const Sketch = (p: p5) => {
                 return new RandomWalker(p.mouseX, p.mouseY, color)
             case "in-mouse-direction":
                 return new InMouseDirectionWalker(p.mouseX, p.mouseY, color)
+            case 'gaussian':
+                return new GaussianWalker(p.mouseX, p.mouseY, color)
         }
     }
 }
